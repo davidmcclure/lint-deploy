@@ -1,0 +1,85 @@
+---
+
+- name: Install dependencies
+  become: yes
+  apt:
+    pkg: '{{ item }}'
+    update_cache: yes
+    state: latest
+  with_items:
+
+    - htop
+    - git
+
+    # python
+    - python3-dev
+    - libboost-python-dev
+    - python-virtualenv
+    - libpq-dev
+
+    # lxml
+    - libxslt1-dev
+    - libxml2-dev
+
+    # sqlite
+    - sqlite3
+    - libsqlite3-dev
+
+    # mpi
+    - libcr-dev
+    - mpich2
+    - mpich2-doc
+
+    # matplotlib
+    - libfreetype6-dev
+    - libxft-dev
+    - libpng-dev
+
+- name: Create the project directories
+  become: yes
+  file:
+    path: '{{ item.value }}'
+    group: '{{ ansible_ssh_user }}'
+    owner: '{{ ansible_ssh_user }}'
+    state: directory
+  with_dict: '{{ lint_dirs }}'
+
+- name: Create the config directory
+  become: yes
+  file:
+    path: /etc/lint
+    group: '{{ ansible_ssh_user }}'
+    owner: '{{ ansible_ssh_user }}'
+    state: directory
+
+- name: Pull the source code
+  git:
+    repo: '{{ lint_repo }}'
+    version: '{{ lint_branch }}'
+    dest: '{{ lint_dirs.code }}'
+    accept_hostkey: yes
+
+- name: Push the config files
+  template:
+    src: lint/{{ item }}.yml.j2
+    dest: /etc/lint/{{ item }}.yml
+  with_items:
+    - lint
+    - lint.test
+
+- name: Install pip dependencies
+  pip:
+    requirements: '{{ lint_dirs.code }}/requirements.txt'
+    virtualenv: '{{ lint_dirs.code }}/env'
+    virtualenv_python: python3
+    state: latest
+
+- name: Install the package
+  command: env/bin/python setup.py develop
+  args:
+    chdir: '{{ lint_dirs.code }}'
+
+- name: Create the database
+  command: env/bin/inv init_db
+  args:
+    chdir: '{{ lint_dirs.code }}'

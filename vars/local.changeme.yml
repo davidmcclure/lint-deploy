@@ -1,0 +1,7 @@
+---
+
+# Local path for synced code.
+stacks_sync_code: XXX
+
+# Local path for synced data.
+stacks_sync_data: XXX

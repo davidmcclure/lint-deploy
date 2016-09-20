@@ -1,0 +1,12 @@
+---
+
+- name: Deploy a Vagrant box
+
+  vars_files:
+    - vars/local.yml
+
+  hosts:
+    - cluster
+
+  roles:
+    - role: lint-dev

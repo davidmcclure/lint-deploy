@@ -1,0 +1,38 @@
+---
+
+- name: Create the project directories
+  file:
+    path: '{{ item.value }}'
+    state: directory
+  with_dict: '{{ stacks_dirs }}'
+
+- name: Pull the source code
+  git:
+    repo: '{{ stacks_repo }}'
+    version: '{{ stacks_branch }}'
+    dest: '{{ stacks_dirs.src }}'
+    accept_hostkey: yes
+
+- name: Push the config files
+  template:
+    src: stacks/{{ item }}.yml.j2
+    dest: '{{ stacks_dirs.config }}/{{ item }}.yml'
+  with_items:
+    - stacks
+    - stacks.test
+
+- name: Install the package
+  command: '{{ stacks_dirs.src }}/bin/setup-sherlock'
+  args:
+    chdir: '{{ stacks_dirs.src }}'
+
+- name: Push sbatch configs
+  template:
+    src: sbatch.j2
+    dest: '{{ stacks_dirs.sbatch }}/{{ item.name }}.sbatch'
+  with_items: '{{ stacks_sbatch }}'
+
+- name: Configure .bashrc
+  lineinfile:
+    dest: /home/{{ ansible_ssh_user }}/.bashrc
+    line: export STACKS_CONFIG={{ stacks_dirs.config }}
