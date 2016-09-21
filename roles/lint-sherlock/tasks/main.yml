@@ -26,18 +26,18 @@
   with_items:
     - lint
 
-#- name: Install the package
-  #command: '{{ stacks_dirs.src }}/bin/setup-sherlock'
-  #args:
-    #chdir: '{{ stacks_dirs.src }}'
+- name: Install the package
+  command: bin/setup-sherlock
+  args:
+    chdir: '{{ lint_dirs.code }}'
 
-#- name: Push sbatch configs
-  #template:
-    #src: sbatch.j2
-    #dest: '{{ stacks_dirs.sbatch }}/{{ item.name }}.sbatch'
-  #with_items: '{{ stacks_sbatch }}'
+- name: Configure .bashrc
+  lineinfile:
+    dest: /home/{{ ansible_ssh_user }}/.bashrc
+    line: export LINT_CONFIG={{ lint_dirs.config }}
 
-#- name: Configure .bashrc
-  #lineinfile:
-    #dest: /home/{{ ansible_ssh_user }}/.bashrc
-    #line: export STACKS_CONFIG={{ stacks_dirs.config }}
+- name: Push sbatch configs
+  template:
+    src: sbatch.j2
+    dest: '{{ lint_dirs.sbatch }}/{{ item.name }}.sbatch'
+  with_items: '{{ lint_sbatch }}'

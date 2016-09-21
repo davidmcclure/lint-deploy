@@ -7,6 +7,7 @@ lint_dirs:
   code: /share/PI/malgeehe/code/lint
   config: /share/PI/malgeehe/config/lint
   data: /scratch/PI/malgeehe/data/lint
+  sbatch: /share/PI/malgeehe/sbatch/lint
 
 lint_result_dirs:
   htrc: '{{ lint_dirs.data }}/results/htrc'
@@ -18,3 +19,12 @@ lint_db: '{{ lint_dirs.data }}/lint.db'
 stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 
 htrc_data: /scratch/PI/malgeehe/data/htrc
+
+lint_sbatch:
+
+  # dev
+  - name: extract-chicago
+    time: 00:10:00
+    nodes: 1
+    tasks: 4
+    mem: 16000
