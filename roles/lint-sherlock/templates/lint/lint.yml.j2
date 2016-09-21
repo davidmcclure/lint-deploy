@@ -1,0 +1,16 @@
+---
+
+htrc:
+  features: /scratch/PI/malgeehe/data/htrc
+  manifest: /scratch/PI/malgeehe/data/htrc/pd-basic-file-listing.txt
+
+chicago: /scratch/PI/malgeehe/data/stacks/raw/chicago
+
+gail: /scratch/PI/malgeehe/data/stacks/raw/gail
+
+results:
+  htrc: {{ lint_result_dirs.htrc }}
+  chicago: {{ lint_result_dirs.chicago }}
+  gail: {{ lint_result_dirs.gail }}
+
+database: {{ lint_db }}

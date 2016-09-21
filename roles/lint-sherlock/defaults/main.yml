@@ -9,8 +9,8 @@ lint_dirs:
   data: /scratch/PI/malgeehe/data/lint
 
 lint_result_dirs:
-  htrc: '{{lint_dirs.data}}/results/htrc'
-  chicago: '{{lint_dirs.data}}/results/chicago'
-  gail: '{{lint_dirs.data}}/results/gail'
+  htrc: '{{ lint_dirs.data }}/results/htrc'
+  chicago: '{{ lint_dirs.data }}/results/chicago'
+  gail: '{{ lint_dirs.data }}/results/gail'
 
-lint_db: '{{lint_dirs.data}}/lint.db'
+lint_db: '{{ lint_dirs.data }}/lint.db'
