@@ -14,3 +14,7 @@ lint_result_dirs:
   gail: '{{ lint_dirs.data }}/results/gail'
 
 lint_db: '{{ lint_dirs.data }}/lint.db'
+
+stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
+
+htrc_data: /scratch/PI/malgeehe/data/htrc

@@ -1,12 +1,12 @@
 ---
 
 htrc:
-  features: /scratch/PI/malgeehe/data/htrc
-  manifest: /scratch/PI/malgeehe/data/htrc/pd-basic-file-listing.txt
+  features: {{ htrc_data }}
+  manifest: {{ htrc_data }}/pd-basic-file-listing.txt
 
-chicago: /scratch/PI/malgeehe/data/stacks/raw/chicago
+chicago: {{ stacks_raw }}/chicago
 
-gail: /scratch/PI/malgeehe/data/stacks/raw/gail
+gail: {{ stacks_raw }}/gail
 
 results:
   htrc: {{ lint_result_dirs.htrc }}
