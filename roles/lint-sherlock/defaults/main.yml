@@ -26,5 +26,5 @@ lint_sbatch:
   - name: extract-chicago
     time: 00:10:00
     nodes: 1
-    tasks: 4
-    mem: 16000
+    tasks: 1
+    mem: 4000
