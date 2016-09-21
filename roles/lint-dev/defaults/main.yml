@@ -1,8 +1,0 @@
----
-
-lint_repo: git@github.com:davidmcclure/literary-interior.git
-lint_branch: master
-
-lint_dirs:
-  code: /opt/lint
-  data: /var/lint
