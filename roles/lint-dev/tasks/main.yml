@@ -37,7 +37,9 @@
 
 - name: Install SciPy build dependencies
   become: yes
-  command: apt-get -y build-dep python3-scipy
+  apt:
+    pkg: python3-scipy
+    state: build-dep
 
 - name: Create the project directories
   become: yes
