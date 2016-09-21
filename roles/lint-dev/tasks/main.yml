@@ -35,6 +35,10 @@
     - libxft-dev
     - libpng-dev
 
+- name: Install SciPy build dependencies
+  become: yes
+  command: apt-get -y build-dep python3-scipy
+
 - name: Create the project directories
   become: yes
   file:
