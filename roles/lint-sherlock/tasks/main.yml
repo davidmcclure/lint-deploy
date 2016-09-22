@@ -41,3 +41,9 @@
     src: sbatch-mpi.j2
     dest: '{{ lint_dirs.sbatch }}/{{ item.name }}.sbatch'
   with_items: '{{ lint_sbatch_mpi }}'
+
+- name: Push single-threaded sbatch configs
+  template:
+    src: sbatch.j2
+    dest: '{{ lint_dirs.sbatch }}/{{ item.name }}.sbatch'
+  with_items: '{{ lint_sbatch }}'
