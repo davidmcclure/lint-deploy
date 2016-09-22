@@ -22,9 +22,8 @@ htrc_data: /scratch/PI/malgeehe/data/htrc
 
 lint_sbatch:
 
-  # dev
   - name: extract-chicago
-    time: 00:10:00
-    nodes: 1
-    tasks: 1
-    mem: 4000
+    time: 02:00:00
+    nodes: 2
+    tasks: 16
+    mem: 64000
