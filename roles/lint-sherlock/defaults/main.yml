@@ -30,9 +30,8 @@ lint_sbatch_mpi:
 
 lint_sbatch:
 
-  # dev
   - name: gather-chicago
-    time: 00:10:00
+    time: 01:00:00
     nodes: 1
     tasks: 1
     mem: 4000
