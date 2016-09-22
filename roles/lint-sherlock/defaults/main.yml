@@ -20,7 +20,7 @@ stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 
 htrc_data: /scratch/PI/malgeehe/data/htrc
 
-lint_sbatch:
+lint_sbatch_mpi:
 
   - name: extract-chicago
     time: 02:00:00
