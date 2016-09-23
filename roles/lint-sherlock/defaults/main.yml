@@ -20,6 +20,7 @@ stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 
 htrc_data: /scratch/PI/malgeehe/data/htrc
 
+
 lint_sbatch_mpi:
 
   - name: extract-chicago
@@ -27,6 +28,14 @@ lint_sbatch_mpi:
     nodes: 2
     tasks: 16
     mem: 64000
+
+  # dev
+  - name: extract-gail
+    time: 00:10:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
+
 
 lint_sbatch:
 
