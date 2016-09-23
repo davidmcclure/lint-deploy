@@ -21,10 +21,8 @@
 
 - name: Push the config files
   template:
-    src: lint/{{ item }}.yml.j2
-    dest: '{{ lint_dirs.config }}/{{ item }}.yml'
-  with_items:
-    - lint
+    src: lint.yml.j2
+    dest: '{{ lint_dirs.config }}/lint.yml'
 
 - name: Install the package
   command: bin/setup-sherlock
