@@ -41,8 +41,8 @@ lint_sbatch:
   - name: gather-chicago
     time: 01:00:00
     nodes: 1
-    tasks: 1
-    mem: 4000
+    tasks: 2
+    mem: 8000
 
   - name: gather-gail
     time: 02:00:00
