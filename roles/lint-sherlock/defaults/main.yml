@@ -45,7 +45,7 @@ lint_sbatch:
     mem: 12000
 
   - name: gather-gail
-    time: 02:00:00
+    time: 05:00:00
     nodes: 1
     tasks: 3
     mem: 12000
