@@ -6,11 +6,17 @@
     state: directory
   with_dict: '{{ lint_dirs }}'
 
-- name: Create result directories
+- name: Create token directories
   file:
     path: '{{ item.value }}'
     state: directory
-  with_dict: '{{ lint_result_dirs }}'
+  with_dict: '{{ lint_config.results.tokens }}'
+
+- name: Create char directories
+  file:
+    path: '{{ item.value }}'
+    state: directory
+  with_dict: '{{ lint_config.results.chars }}'
 
 - name: Pull the source code
   git:

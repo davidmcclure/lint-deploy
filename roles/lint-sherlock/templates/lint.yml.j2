@@ -1,16 +1,3 @@
 ---
 
-htrc:
-  features: {{ htrc_data }}
-  manifest: {{ htrc_data }}/pd-basic-file-listing.txt
-
-chicago: {{ stacks_raw }}/chicago
-
-gail: {{ stacks_raw }}/gail-amfic
-
-results:
-  htrc: {{ lint_result_dirs.htrc }}
-  chicago: {{ lint_result_dirs.chicago }}
-  gail: {{ lint_result_dirs.gail }}
-
-database: {{ lint_db }}
+{{ lint_config | to_yaml }}

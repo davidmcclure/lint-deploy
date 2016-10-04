@@ -3,22 +3,44 @@
 lint_repo: git@github.com:davidmcclure/literary-interior.git
 lint_branch: master
 
+
 lint_dirs:
   code: /share/PI/malgeehe/code/lint
   config: /share/PI/malgeehe/config/lint
   data: /scratch/PI/malgeehe/data/lint
   sbatch: /share/PI/malgeehe/sbatch/lint
 
-lint_result_dirs:
-  htrc: '{{ lint_dirs.data }}/results/htrc'
-  chicago: '{{ lint_dirs.data }}/results/chicago'
-  gail: '{{ lint_dirs.data }}/results/gail'
-
-lint_db: '{{ lint_dirs.data }}/lint.db'
 
 stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
-
 htrc_data: /scratch/PI/malgeehe/data/htrc
+
+lint_tokens_dir: '{{ lint_dirs.data }}/results/tokens'
+lint_chars_dir: '{{ lint_dirs.data }}/results/chars'
+
+
+lint_config:
+
+  htrc:
+    features: '{{ htrc_data }}'
+    manifest: '{{ htrc_data }}/pd-basic-file-listing.txt'
+
+  gail: '{{ stacks_raw }}/gail-amfic'
+
+  chicago: '{{ stacks_raw }}/chicago'
+
+  results:
+
+    tokens:
+      htrc: '{{ lint_tokens_dir }}/htrc'
+      chicago: '{{ lint_tokens_dir }}/chicago'
+      gail: '{{ lint_tokens_dir }}/gail'
+
+    chars:
+      htrc: '{{ lint_chars_dir }}/htrc'
+      chicago: '{{ lint_chars_dir }}/chicago'
+      gail: '{{ lint_chars_dir }}/gail'
+
+  database: '{{ lint_dirs.data }}/lint.db'
 
 
 lint_sbatch_mpi:
