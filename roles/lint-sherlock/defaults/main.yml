@@ -45,13 +45,13 @@ lint_config:
 
 lint_sbatch_mpi:
 
-  - name: extract-chicago
+  - name: ext-chicago-tokens
     time: 02:00:00
     nodes: 2
     tasks: 16
     mem: 64000
 
-  - name: extract-gail
+  - name: ext-gail-tokens
     time: 02:00:00
     nodes: 3
     tasks: 16
@@ -60,13 +60,13 @@ lint_sbatch_mpi:
 
 lint_sbatch:
 
-  - name: gather-chicago
+  - name: gather-chicago-tokens
     time: 02:00:00
     nodes: 1
     tasks: 3
     mem: 12000
 
-  - name: gather-gail
+  - name: gather-gail-tokens
     time: 05:00:00
     nodes: 1
     tasks: 3
