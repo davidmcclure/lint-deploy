@@ -3,13 +3,13 @@
 lint_repo: git@github.com:davidmcclure/literary-interior.git
 lint_branch: master
 
-# TODO: Simplify?
-
 lint_dirs:
   code: /share/PI/malgeehe/code/lint
   config: /share/PI/malgeehe/config/lint
   data: /scratch/PI/malgeehe/data/lint
   sbatch: /share/PI/malgeehe/sbatch/lint
+
+# TODO: Simplify?
 
 lint_results:
   tokens: '{{ lint_dirs.data }}/results/tokens'
