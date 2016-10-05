@@ -51,7 +51,19 @@ lint_sbatch_mpi:
     tasks: 16
     mem: 64000
 
+  - name: ext-chicago-chars
+    time: 02:00:00
+    nodes: 2
+    tasks: 16
+    mem: 64000
+
   - name: ext-gail-tokens
+    time: 02:00:00
+    nodes: 3
+    tasks: 16
+    mem: 64000
+
+  - name: ext-gail-chars
     time: 02:00:00
     nodes: 3
     tasks: 16
@@ -66,8 +78,20 @@ lint_sbatch:
     tasks: 3
     mem: 12000
 
+  - name: gather-chicago-chars
+    time: 01:00:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
+
   - name: gather-gail-tokens
     time: 05:00:00
     nodes: 1
     tasks: 3
     mem: 12000
+
+  - name: gather-gail-chars
+    time: 01:00:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
