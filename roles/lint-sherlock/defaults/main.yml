@@ -3,6 +3,7 @@
 lint_repo: git@github.com:davidmcclure/literary-interior.git
 lint_branch: master
 
+# TODO: Simplify?
 
 lint_dirs:
   code: /share/PI/malgeehe/code/lint
@@ -10,12 +11,13 @@ lint_dirs:
   data: /scratch/PI/malgeehe/data/lint
   sbatch: /share/PI/malgeehe/sbatch/lint
 
+lint_results:
+  tokens: '{{ lint_dirs.data }}/results/tokens'
+  chars: '{{ lint_dirs.data }}/results/chars'
 
 stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
-htrc_data: /scratch/PI/malgeehe/data/htrc
 
-lint_tokens_dir: '{{ lint_dirs.data }}/results/tokens'
-lint_chars_dir: '{{ lint_dirs.data }}/results/chars'
+htrc_data: /scratch/PI/malgeehe/data/htrc
 
 
 lint_config:
@@ -31,14 +33,14 @@ lint_config:
   results:
 
     tokens:
-      htrc: '{{ lint_tokens_dir }}/htrc'
-      chicago: '{{ lint_tokens_dir }}/chicago'
-      gail: '{{ lint_tokens_dir }}/gail'
+      htrc: '{{ lint_results.tokens }}/htrc'
+      chicago: '{{ lint_results.tokens }}/chicago'
+      gail: '{{ lint_results.tokens }}/gail'
 
     chars:
-      htrc: '{{ lint_chars_dir }}/htrc'
-      chicago: '{{ lint_chars_dir }}/chicago'
-      gail: '{{ lint_chars_dir }}/gail'
+      htrc: '{{ lint_results.chars }}/htrc'
+      chicago: '{{ lint_results.chars }}/chicago'
+      gail: '{{ lint_results.chars }}/gail'
 
   database: '{{ lint_dirs.data }}/lint.db'
 
