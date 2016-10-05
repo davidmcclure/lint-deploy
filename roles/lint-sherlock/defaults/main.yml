@@ -9,16 +9,14 @@ lint_dirs:
   data: /scratch/PI/malgeehe/data/lint
   sbatch: /share/PI/malgeehe/sbatch/lint
 
-# TODO: Simplify?
-
-lint_results:
-  tokens: '{{ lint_dirs.data }}/results/tokens'
-  chars: '{{ lint_dirs.data }}/results/chars'
+htrc_data: /scratch/PI/malgeehe/data/htrc
 
 stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 
-htrc_data: /scratch/PI/malgeehe/data/htrc
+# ****
 
+lint_chars: '{{ lint_dirs.data }}/results/chars'
+lint_tokens: '{{ lint_dirs.data }}/results/tokens'
 
 lint_config:
 
@@ -32,18 +30,19 @@ lint_config:
 
   results:
 
-    tokens:
-      htrc: '{{ lint_results.tokens }}/htrc'
-      chicago: '{{ lint_results.tokens }}/chicago'
-      gail: '{{ lint_results.tokens }}/gail'
-
     chars:
-      htrc: '{{ lint_results.chars }}/htrc'
-      chicago: '{{ lint_results.chars }}/chicago'
-      gail: '{{ lint_results.chars }}/gail'
+      htrc: '{{ lint_chars }}/htrc'
+      chicago: '{{ lint_chars }}/chicago'
+      gail: '{{ lint_chars }}/gail'
+
+    tokens:
+      htrc: '{{ lint_tokens }}/htrc'
+      chicago: '{{ lint_tokens }}/chicago'
+      gail: '{{ lint_tokens }}/gail'
 
   database: '{{ lint_dirs.data }}/lint.db'
 
+# ****
 
 lint_sbatch_mpi:
 
@@ -71,6 +70,7 @@ lint_sbatch_mpi:
     tasks: 16
     mem: 64000
 
+# ****
 
 lint_sbatch:
 
