@@ -36,8 +36,22 @@ lint_config:
 
 lint_sbatch_mpi:
 
-  # test
   - name: ext-chicago-texts
+    time: 00:10:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
+
+  - name: ext-gail-texts
+    time: 00:10:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
+
+lint_sbatch:
+
+  # test
+  - name: gather-texts
     time: 00:10:00
     nodes: 1
     tasks: 1
