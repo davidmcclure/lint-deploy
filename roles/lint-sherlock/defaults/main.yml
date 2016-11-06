@@ -9,16 +9,11 @@ lint_dirs:
   data: /scratch/PI/malgeehe/data/lint
   sbatch: /share/PI/malgeehe/sbatch/lint
 
-htrc_data: /scratch/PI/malgeehe/data/htrc
-
 stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 
+htrc_data: /scratch/PI/malgeehe/data/htrc
+
 # ****
-
-# TODO: Simplify?
-
-lint_chars: '{{ lint_dirs.data }}/results/chars'
-lint_tokens: '{{ lint_dirs.data }}/results/tokens'
 
 lint_config:
 
@@ -31,16 +26,9 @@ lint_config:
   chicago: '{{ stacks_raw }}/chicago'
 
   results:
-
-    chars:
-      htrc: '{{ lint_chars }}/htrc'
-      chicago: '{{ lint_chars }}/chicago'
-      gail: '{{ lint_chars }}/gail'
-
-    tokens:
-      htrc: '{{ lint_tokens }}/htrc'
-      chicago: '{{ lint_tokens }}/chicago'
-      gail: '{{ lint_tokens }}/gail'
+    texts: '{{ lint_dirs.data}}/results/texts'
+    buckets: '{{ lint_dirs.data}}/results/buckets'
+    tokens: '{{ lint_dirs.data}}/results/tokens'
 
   database: '{{ lint_dirs.data }}/lint.db'
 
@@ -48,54 +36,9 @@ lint_config:
 
 lint_sbatch_mpi:
 
-  - name: ext-chicago-tokens
-    time: 02:00:00
-    nodes: 2
-    tasks: 16
-    mem: 64000
-
-  - name: ext-chicago-chars
-    time: 02:00:00
-    nodes: 2
-    tasks: 16
-    mem: 64000
-
-  - name: ext-gail-tokens
-    time: 02:00:00
-    nodes: 3
-    tasks: 16
-    mem: 64000
-
-  - name: ext-gail-chars
-    time: 02:00:00
-    nodes: 3
-    tasks: 16
-    mem: 64000
-
-# ****
-
-lint_sbatch:
-
-  - name: gather-chicago-tokens
-    time: 02:00:00
-    nodes: 1
-    tasks: 3
-    mem: 12000
-
-  - name: gather-chicago-chars
-    time: 01:00:00
-    nodes: 1
-    tasks: 1
-    mem: 4000
-
-  - name: gather-gail-tokens
-    time: 05:00:00
-    nodes: 1
-    tasks: 3
-    mem: 12000
-
-  - name: gather-gail-chars
-    time: 01:00:00
+  # test
+  - name: ext-chicago-texts
+    time: 00:10:00
     nodes: 1
     tasks: 1
     mem: 4000
