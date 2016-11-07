@@ -6,12 +6,6 @@
     state: directory
   with_dict: '{{ lint_dirs }}'
 
-- name: Create result directories
-  file:
-    path: '{{ item.value }}'
-    state: directory
-  with_dict: '{{ lint_config.results }}'
-
 - name: Pull the source code
   git:
     repo: '{{ lint_repo }}'

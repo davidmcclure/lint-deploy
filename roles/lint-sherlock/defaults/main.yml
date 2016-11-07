@@ -17,10 +17,6 @@ htrc_data: /scratch/PI/malgeehe/data/htrc
 
 lint_config:
 
-  htrc:
-    features: '{{ htrc_data }}'
-    manifest: '{{ htrc_data }}/pd-basic-file-listing.txt'
-
   gail: '{{ stacks_raw }}/gail-amfic'
 
   chicago: '{{ stacks_raw }}/chicago'
@@ -42,6 +38,7 @@ lint_sbatch_mpi:
     tasks: 1
     mem: 4000
 
+  # test
   - name: ext-gail-texts
     time: 00:10:00
     nodes: 1
