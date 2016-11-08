@@ -44,11 +44,18 @@ lint_sbatch_mpi:
     tasks: 16
     mem: 64000
 
+  # test
+  - name: ext-buckets
+    time: 00:10:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
+
 lint_sbatch:
 
   # test
   - name: gather-texts
-    time: 00:10:00
+    time: 00:30:00
     nodes: 1
     tasks: 1
     mem: 4000
