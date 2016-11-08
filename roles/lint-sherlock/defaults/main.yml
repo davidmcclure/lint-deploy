@@ -53,9 +53,8 @@ lint_sbatch_mpi:
 
 lint_sbatch:
 
-  # test
   - name: gather-texts
-    time: 00:30:00
+    time: 00:40:00
     nodes: 1
     tasks: 1
     mem: 4000
