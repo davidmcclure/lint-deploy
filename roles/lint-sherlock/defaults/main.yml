@@ -38,12 +38,11 @@ lint_sbatch_mpi:
     tasks: 1
     mem: 4000
 
-  # test
   - name: ext-gail-texts
-    time: 00:10:00
-    nodes: 1
-    tasks: 1
-    mem: 4000
+    time: 01:00:00
+    nodes: 2
+    tasks: 16
+    mem: 64000
 
 lint_sbatch:
 
