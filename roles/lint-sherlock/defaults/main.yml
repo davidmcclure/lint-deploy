@@ -69,3 +69,10 @@ lint_sbatch:
     nodes: 1
     tasks: 8
     mem: 32000
+
+  # test
+  - name: gather-tokens
+    time: 00:10:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
