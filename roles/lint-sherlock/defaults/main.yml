@@ -50,6 +50,12 @@ lint_sbatch_mpi:
     tasks: 16
     mem: 64000
 
+  - name: ext-tokens
+    time: 00:10:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
+
 lint_sbatch:
 
   - name: gather-texts
