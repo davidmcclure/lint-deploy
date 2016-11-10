@@ -51,10 +51,10 @@ lint_sbatch_mpi:
     mem: 64000
 
   - name: ext-tokens
-    time: 00:10:00
-    nodes: 1
-    tasks: 1
-    mem: 4000
+    time: 03:00:00
+    nodes: 4
+    tasks: 16
+    mem: 64000
 
 lint_sbatch:
 
