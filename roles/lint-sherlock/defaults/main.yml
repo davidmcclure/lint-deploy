@@ -57,3 +57,10 @@ lint_sbatch:
     nodes: 1
     tasks: 1
     mem: 4000
+
+  # test
+  - name: gather-buckets
+    time: 00:10:00
+    nodes: 1
+    tasks: 1
+    mem: 4000
