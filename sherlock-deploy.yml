@@ -3,4 +3,4 @@
 - name: Deploy to Sherlock
   hosts: sherlock
   roles:
-    - role: spark/core
+    - role: spark
