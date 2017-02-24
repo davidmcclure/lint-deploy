@@ -27,3 +27,8 @@
     src: '{{ spark_dir }}/{{ spark_release }}'
     dest: '{{ spark_home }}'
     state: link
+
+- name: Copy uberjar
+  copy:
+    src: data/lint.jar
+    dest: ~/lint.jar
