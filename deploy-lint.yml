@@ -1,0 +1,6 @@
+---
+
+- name: Deploy jar + config
+  hosts: sherlock
+  roles:
+    - role: lint

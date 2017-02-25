@@ -1,0 +1,18 @@
+---
+
+- name: Create project directories
+  file:
+    path: '{{ item.value }}'
+    state: directory
+  with_dict: '{{ lint_dirs }}'
+
+- name: Copy uberjar
+  copy:
+    src: data/lint.jar
+    dest: '{{ lint_jar_path }}'
+
+- name: Push sbatch configs
+  template:
+    src: sbatch.j2
+    dest: '{{ lint_dirs.sbatch }}/{{ item.class }}.sbatch'
+  with_items: '{{ lint_sbatch }}'

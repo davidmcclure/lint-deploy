@@ -1,6 +1,6 @@
 ---
 
-- name: Deploy to Sherlock
+- name: Deploy Spark
   hosts: sherlock
   roles:
     - role: spark

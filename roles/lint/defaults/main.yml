@@ -1,0 +1,16 @@
+---
+
+lint_jar_path: /share/PI/malgeehe/code/lint.jar
+
+lint_dirs:
+  data: /scratch/PI/malgeehe/data/lint
+  sbatch: /share/PI/malgeehe/sbatch/lint
+
+lint_sbatch:
+
+  - class: Benchmark
+    time: 00:10:00
+    nodes: 1
+    tasks_per_node: 4
+    cpus_per_task: 4
+    mem: 4000

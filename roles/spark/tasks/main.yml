@@ -32,9 +32,3 @@
   lineinfile:
     dest: ~/.bashrc
     line: export PATH=$PATH:{{ spark_home }}/bin
-
-# TODO: Separate role.
-- name: Copy uberjar
-  copy:
-    src: data/lint.jar
-    dest: '{{ lint_jar_path }}'
