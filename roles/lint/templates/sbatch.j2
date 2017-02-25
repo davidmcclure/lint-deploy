@@ -33,4 +33,7 @@
 
 module load jre/1.8.0_91
 
-spark-submit --class {{ item.class }} {{ lint_jar_path }}
+spark-submit \
+  --driver-class-path {{ lint_dirs.config }} \
+  --class {{ item.class }} \
+  {{ lint_jar_path }}
