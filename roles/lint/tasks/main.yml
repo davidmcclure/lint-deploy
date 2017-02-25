@@ -11,6 +11,11 @@
     src: data/lint.jar
     dest: '{{ lint_jar_path }}'
 
+- name: Push configuration
+  template:
+    src: application.conf.j2
+    dest: '{{ lint_dirs.config }}/application.conf'
+
 - name: Push sbatch configs
   template:
     src: sbatch.j2
