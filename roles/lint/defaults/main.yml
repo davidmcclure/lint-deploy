@@ -36,3 +36,11 @@ lint_sbatch:
     tasks_per_node: 1
     cpus_per_task: 4
     mem: 4000
+
+  # test
+  - class: LoadGale
+    time: 00:10:00
+    nodes: 1
+    tasks_per_node: 4
+    cpus_per_task: 4
+    mem: 64000
