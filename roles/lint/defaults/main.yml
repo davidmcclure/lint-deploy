@@ -3,7 +3,7 @@
 lint_jar_path: /share/PI/malgeehe/code/lint.jar
 
 lint_dirs:
-  data: /scratch/PI/malgeehe/data/lint
+  data: /scratch/PI/malgeehe/data/lint-spark
   sbatch: /share/PI/malgeehe/sbatch/lint
   config: /share/PI/malgeehe/config/lint
 
@@ -13,7 +13,9 @@ stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 # application.conf
 lint_config:
 
-  gale_dir: '{{ stacks_raw }}/gale'
+  gale:
+    corpus_dir: '{{ stacks_raw }}/gale'
+    novel_parquet: '{{ lint_dirs.data }}/gale.parquet'
 
   chicago:
     novel_csv: '{{ stacks_raw }}/chicago/NOVELS_METADATA.csv'
