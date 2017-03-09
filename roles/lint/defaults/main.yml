@@ -25,7 +25,7 @@ lint_config:
 
 lint_sbatch:
 
-  - class: Benchmark
+  - class: lint.jobs.Benchmark
     time: 00:10:00
     nodes: 1
     tasks_per_node: 4
@@ -33,7 +33,7 @@ lint_sbatch:
     mem: 4000
 
   # test
-  - class: LoadGale
+  - class: lint.jobs.LoadGale
     time: 00:10:00
     nodes: 1
     tasks_per_node: 4
