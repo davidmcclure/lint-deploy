@@ -26,7 +26,7 @@ lint_config:
 lint_sbatch:
 
   - class: lint.jobs.Benchmark
-    time: 00:10:00
+    time: 00:01:00
     nodes: 1
     tasks_per_node: 4
     cpus_per_task: 4
