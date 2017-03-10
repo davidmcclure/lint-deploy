@@ -34,8 +34,8 @@ lint_sbatch:
 
   # test
   - class: lint.jobs.LoadGale
-    time: 00:10:00
-    nodes: 1
+    time: 01:00:00
+    nodes: 3
     tasks_per_node: 4
     cpus_per_task: 4
     mem: 64000

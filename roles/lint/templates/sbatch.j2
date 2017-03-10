@@ -33,10 +33,12 @@
 
 module load jre/1.8.0_91
 
+{% set cores = item.tasks_per_node * item.cpus_per_task * item.nodes %}
+
 spark-submit \
   --driver-class-path {{ lint_dirs.config }} \
   --class {{ item.class }} \
-  --total-executor-cores {{ item.tasks_per_node * item.cpus_per_task * item.nodes }} \
+  --total-executor-cores {{ cores }} \
   --driver-memory {{ item.mem }}m \
   --executor-memory {{ item.mem}}m \
   {{ lint_jar_path }}
