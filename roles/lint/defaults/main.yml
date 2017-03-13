@@ -31,8 +31,8 @@ lint_sbatch:
   - class: lint.jobs.Benchmark
     time: 00:02:00
     nodes: 2
-    tasks_per_node: 4
-    cpus_per_task: 4
+    tasks_per_node: 1
+    cpus_per_task: 16
     mem: 4000
 
   - class: lint.jobs.LoadGale
