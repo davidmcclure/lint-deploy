@@ -32,3 +32,9 @@
   lineinfile:
     dest: ~/.bashrc
     line: export PATH=$PATH:{{ spark_home }}/bin
+
+- name: Copy cluster startup script
+  template:
+    src: start-cluster.j2
+    dest: '{{ spark_dir }}/start-cluster'
+    mode: '0555'

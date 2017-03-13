@@ -33,6 +33,13 @@
 
 module load jre/1.8.0_91
 
+# Start the Spark master / slave.
+MASTER=$(hostname)
+srun {{ spark_dir }}/start-cluster $MASTER &
+
+# Wait for cluster to spin start.
+sleep 10
+
 {% set cores = item.tasks_per_node * item.cpus_per_task * item.nodes %}
 
 spark-submit \

@@ -9,6 +9,9 @@ lint_dirs:
 
 stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 
+# TODO: Share from spark role?
+spark_dir: /share/PI/malgeehe/spark
+
 
 # application.conf
 lint_config:
@@ -26,8 +29,8 @@ lint_config:
 lint_sbatch:
 
   - class: lint.jobs.Benchmark
-    time: 00:01:00
-    nodes: 3
+    time: 00:02:00
+    nodes: 2
     tasks_per_node: 4
     cpus_per_task: 4
     mem: 4000
