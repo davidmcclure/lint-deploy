@@ -27,8 +27,8 @@
 #################
 #tasks to run per node; a "task" is usually mapped to a MPI processes.
 # for local parallelism (OpenMP or threads), use "--ntasks-per-node=1 --cpus-per-task=16" instead
-#SBATCH --ntasks-per-node={{ item.tasks_per_node }}
-#SBATCH --cpus-per-task={{ item.cpus_per_task }}
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task={{ item.cores }}
 #################
 
 module load jre/1.8.0_91
@@ -37,15 +37,16 @@ module load jre/1.8.0_91
 MASTER=$(hostname)
 srun {{ spark_dir }}/start-cluster $MASTER &
 
-# Wait for cluster to spin start.
-sleep 10
+# Wait for cluster to start.
+sleep 20
 
-{% set cores = item.tasks_per_node * item.cpus_per_task * item.nodes %}
+{% set cores = item.nodes * item.cores %}
 
 spark-submit \
   --driver-class-path {{ lint_dirs.config }} \
   --class {{ item.class }} \
   --total-executor-cores {{ cores }} \
+  --conf spark.default.parallelism={{ cores * 3 }} \
   --driver-memory {{ item.mem }}m \
   --executor-memory {{ item.mem }}m \
   --master spark://$MASTER:7077 \
