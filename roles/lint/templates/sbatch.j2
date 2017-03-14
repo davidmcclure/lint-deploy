@@ -46,7 +46,7 @@ spark-submit \
   --driver-class-path {{ lint_dirs.config }} \
   --class {{ item.class }} \
   --total-executor-cores {{ cores }} \
-  --conf spark.default.parallelism={{ cores * 3 }} \
+  --conf spark.default.parallelism={{ cores }} \
   --driver-memory {{ item.mem }}m \
   --executor-memory {{ item.mem }}m \
   --master spark://$MASTER:7077 \
