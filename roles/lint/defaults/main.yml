@@ -35,7 +35,7 @@ lint_sbatch:
     mem: 4000
 
   - class: lint.jobs.LoadGale
-    time: 01:00:00
+    time: 00:30:00
     nodes: 3
     cores: 16
     mem: 64000
