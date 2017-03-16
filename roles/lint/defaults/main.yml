@@ -24,6 +24,8 @@ lint_config:
     novel_csv: '{{ stacks_raw }}/chicago/NOVELS_METADATA.csv'
     author_csv: '{{ stacks_raw }}/chicago/AUTHORS_METADATA.csv'
     text_dir: '{{ stacks_raw }}/chicago/Texts'
+    author_parquet: '{{ lint_dirs.data }}/chicago-authors.parquet'
+    novel_parquet: '{{ lint_dirs.data }}/chicago-novels.parquet'
 
 
 lint_sbatch:
