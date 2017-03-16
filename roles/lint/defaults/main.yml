@@ -36,6 +36,12 @@ lint_sbatch:
     cores: 16
     mem: 4000
 
+  - class: lint.jobs.TestConfig
+    time: 00:01:00
+    nodes: 1
+    cores: 4
+    mem: 4000
+
   - class: lint.jobs.LoadGale
     time: 00:30:00
     nodes: 3
@@ -46,5 +52,5 @@ lint_sbatch:
   - class: lint.jobs.LoadChicagoNovels
     time: 00:10:00
     nodes: 1
-    cores: 16
-    mem: 64000
+    cores: 4
+    mem: 16000
