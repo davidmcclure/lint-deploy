@@ -50,9 +50,8 @@ lint_sbatch:
     cores: 16
     mem: 64000
 
-  # test
   - class: lint.jobs.LoadChicagoNovels
-    time: 00:10:00
-    nodes: 1
-    cores: 4
-    mem: 16000
+    time: 00:30:00
+    nodes: 2
+    cores: 16
+    mem: 64000
