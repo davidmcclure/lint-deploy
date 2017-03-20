@@ -14,7 +14,7 @@
 - name: Push lint configuration
   template:
     src: application.conf.j2
-    dest: '{{ lint_dirs.config }}/application.conf'
+    dest: '{{ lint_application_conf }}'
 
 - name: Push sbatch configs
   template:

@@ -7,6 +7,8 @@ lint_dirs:
   sbatch: /share/PI/malgeehe/sbatch/lint
   config: /share/PI/malgeehe/config/lint
 
+lint_application_conf: '{{ lint_dirs.config }}/application.conf'
+
 stacks_raw: /scratch/PI/malgeehe/data/stacks/raw
 
 # TODO: Share from spark role?
