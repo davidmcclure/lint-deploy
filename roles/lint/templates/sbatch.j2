@@ -50,10 +50,12 @@ sleep 20
 
 spark-submit \
   --driver-class-path {{ lint_dirs.config }} \
-  --class {{ item.class }} \
+  --files {{ lint_dirs.config }}/application.conf \
+  --conf spark.executor.extraClassPath=./ \
   --total-executor-cores {{ cores }} \
   --conf spark.default.parallelism={{ cores }} \
   --driver-memory {{ driver_memory }}m \
   --executor-memory {{ executor_memory }}m \
+  --class {{ item.class }} \
   --master spark://$MASTER:7077 \
   {{ lint_jar_path }}
