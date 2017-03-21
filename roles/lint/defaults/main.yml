@@ -16,23 +16,24 @@ spark_dir: /share/PI/malgeehe/spark
 
 
 # application.conf
-# TODO: Render with JSON formatter?
 lint_config:
 
-  gale:
-    corpus_dir: '{{ stacks_raw }}/gale'
-    novel_parquet: '{{ lint_dirs.data }}/gale.parquet'
+  lint:
 
-  chicago:
-    novel_csv: '{{ stacks_raw }}/chicago/NOVELS_METADATA.csv'
-    author_csv: '{{ stacks_raw }}/chicago/AUTHORS_METADATA.csv'
-    text_dir: '{{ stacks_raw }}/chicago/Texts'
-    author_parquet: '{{ lint_dirs.data }}/chicago-authors.parquet'
-    novel_parquet: '{{ lint_dirs.data }}/chicago-novels.parquet'
+    gale:
+      corpusDir: '{{ stacks_raw }}/gale'
+      novelParquet: '{{ lint_dirs.data }}/gale.parquet'
 
-  corpus:
-    novel_parquet: '{{ lint_dirs.data }}/novels.parquet'
-    bin_count_csv: '{{ lint_dirs.data }}/bin-counts.csv'
+    chicago:
+      novelMetadataPath: '{{ stacks_raw }}/chicago/NOVELS_METADATA.csv'
+      authorMetadataPath: '{{ stacks_raw }}/chicago/AUTHORS_METADATA.csv'
+      textDir: '{{ stacks_raw }}/chicago/Texts'
+      authorParquet: '{{ lint_dirs.data }}/chicago-authors.parquet'
+      novelParquet: '{{ lint_dirs.data }}/chicago-novels.parquet'
+
+    corpus:
+      novelParquet: '{{ lint_dirs.data }}/novels.parquet'
+      binCountCSV: '{{ lint_dirs.data }}/bin-counts.csv'
 
 
 lint_sbatch:
@@ -61,9 +62,8 @@ lint_sbatch:
     cores: 16
     mem: 64000
 
-  # test
   - class: lint.jobs.MergeCorpus
-    time: 00:10:00
+    time: 00:20:00
     nodes: 1
     cores: 16
     mem: 64000

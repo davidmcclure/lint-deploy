@@ -1,12 +1,2 @@
 
-lint.gale.corpusDir="{{ lint_config.gale.corpus_dir }}"
-lint.gale.novelParquet="{{ lint_config.gale.novel_parquet }}"
-
-lint.chicago.novelMetadataPath="{{ lint_config.chicago.novel_csv }}"
-lint.chicago.authorMetadataPath="{{ lint_config.chicago.author_csv }}"
-lint.chicago.textDir="{{ lint_config.chicago.text_dir }}"
-lint.chicago.authorParquet="{{ lint_config.chicago.author_parquet }}"
-lint.chicago.novelParquet="{{ lint_config.chicago.novel_parquet }}"
-
-lint.corpus.novelParquet="{{ lint_config.corpus.novel_parquet }}"
-lint.corpus.binCountCSV="{{ lint_config.corpus.bin_count_csv }}"
+{{ lint_config | to_nice_json }}
