@@ -69,7 +69,7 @@ lint_sbatch:
     mem: 64000
 
   # test
-  - class: lint.jobs.ExtBinCounds
+  - class: lint.jobs.ExtBinCounts
     time: 00:10:00
     nodes: 1
     cores: 16
