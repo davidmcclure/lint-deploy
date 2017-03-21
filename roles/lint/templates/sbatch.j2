@@ -44,9 +44,10 @@ sleep 20
 
 # By default, 2g for driver.
 {% set driver_memory = item.driver_memory | default(2000) %}
+{% set master_memory = item.master_memory | default(2000) %}
 
 # Executor gets everything left over.
-{% set executor_memory = item.mem - driver_memory %}
+{% set executor_memory = item.mem - driver_memory - master_memory %}
 
 spark-submit \
   --driver-class-path {{ lint_dirs.config }} \
