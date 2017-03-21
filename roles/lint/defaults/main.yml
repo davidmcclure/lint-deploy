@@ -16,6 +16,7 @@ spark_dir: /share/PI/malgeehe/spark
 
 
 # application.conf
+# TODO: Render with JSON formatter?
 lint_config:
 
   gale:
@@ -28,6 +29,10 @@ lint_config:
     text_dir: '{{ stacks_raw }}/chicago/Texts'
     author_parquet: '{{ lint_dirs.data }}/chicago-authors.parquet'
     novel_parquet: '{{ lint_dirs.data }}/chicago-novels.parquet'
+
+  corpus:
+    novel_parquet: '{{ lint_dirs.data }}/novels.parquet'
+    bin_count_csv: '{{ lint_dirs.data }}/bin-counts.csv'
 
 
 lint_sbatch:
