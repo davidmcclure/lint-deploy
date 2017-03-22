@@ -68,9 +68,8 @@ lint_sbatch:
     cores: 16
     mem: 64000
 
-  # test
   - class: lint.jobs.ExtBinCounts
-    time: 00:10:00
-    nodes: 1
+    time: 02:00:00
+    nodes: 3
     cores: 16
     mem: 64000
