@@ -28,6 +28,13 @@
     dest: '{{ spark_home }}'
     state: link
 
+- name: Push Spark config
+  template:
+    src: '{{ item }}.j2'
+    dest: '{{ spark_home }}/conf/{{ item }}'
+  with_items:
+    - spark-defaults.conf
+
 - name: Add Spark to path
   lineinfile:
     dest: ~/.bashrc
