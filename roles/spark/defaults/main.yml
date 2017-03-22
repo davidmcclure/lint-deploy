@@ -7,4 +7,4 @@ spark_home: '{{ spark_dir }}/spark'
 
 lint_jar_path: /share/PI/malgeehe/code/lint.jar
 
-spark_local_dir: /local-scratch/dclure/spark
+spark_local_dir: /scratch/PI/malgeehe/spark
