@@ -33,7 +33,7 @@ lint_config:
 
     corpus:
       novelParquet: '{{ lint_dirs.data }}/novels.parquet'
-      binCountCSV: '{{ lint_dirs.data }}/bin-counts.csv'
+      binCountJSON: '{{ lint_dirs.data }}/bin-counts.json'
 
 
 lint_sbatch:
