@@ -74,7 +74,6 @@ lint_sbatch:
     cores: 16
     mem: 64000
 
-  # test
   - class: lint.jobs.ExtTokenOffsets
     time: 00:10:00
     nodes: 2

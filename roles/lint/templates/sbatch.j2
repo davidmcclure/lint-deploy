@@ -53,7 +53,6 @@ spark-submit \
   --driver-class-path {{ lint_dirs.config }} \
   --files {{ lint_application_conf }} \
   --conf spark.executor.extraClassPath=./ \
-  --total-executor-cores {{ cores }} \
   --conf spark.default.parallelism={{ cores }} \
   --driver-memory {{ driver_memory }}m \
   --executor-memory {{ executor_memory }}m \
