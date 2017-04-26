@@ -59,4 +59,4 @@ spark-submit \
   --executor-memory {{ executor_memory }}m \
   --class {{ item.class }} \
   --master spark://$MASTER:7077 \
-  {{ lint_jar_path }}
+  {{ lint_jar_path }} $@
