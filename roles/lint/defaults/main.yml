@@ -75,6 +75,12 @@ lint_sbatch:
     cores: 16
     mem: 64000
 
+  - class: lint.jobs.ExtShuffledBinCounts
+    time: 00:20:00
+    nodes: 3
+    cores: 16
+    mem: 64000
+
   - class: lint.jobs.ExtTokenOffsets
     time: 00:20:00
     nodes: 1
