@@ -34,6 +34,7 @@ lint_config:
     corpus:
       novelParquet: '{{ lint_dirs.data }}/novels.parquet'
       binCountJSON: '{{ lint_dirs.data }}/bin-counts.json'
+      shuffledBinCountJSON: '{{ lint_dirs.data }}/shuffled-bin-counts.json'
 
 
 lint_sbatch:
