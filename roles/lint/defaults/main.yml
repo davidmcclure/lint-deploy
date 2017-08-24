@@ -33,8 +33,7 @@ lint_config:
 
     corpus:
       novelParquet: '{{ lint_dirs.data }}/novels.parquet'
-      ngram1BinCountJSON: '{{ lint_dirs.data }}/ngram1-bin-counts.json'
-      ngram2BinCountJSON: '{{ lint_dirs.data }}/ngram2-bin-counts.json'
+      ngramBinCountJSON: '{{ lint_dirs.data }}/ngram-bin-counts.json'
 
 
 lint_sbatch:
