@@ -68,14 +68,14 @@ lint_sbatch:
     cores: 16
     mem: 64000
 
-  - class: lint.jobs.ExtNgram1BinCounts
+  - class: lint.jobs.ExtUnigramBinCounts
     time: 00:20:00
     nodes: 3
     cores: 16
     mem: 64000
 
-  - class: lint.jobs.ExtNgram2BinCounts
-    time: 01:00:00
+  - class: lint.jobs.ExtNgramBinCounts
+    time: 00:30:00
     nodes: 3
     cores: 16
     mem: 64000
