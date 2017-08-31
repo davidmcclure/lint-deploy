@@ -90,6 +90,6 @@ lint_sbatch:
 
   - class: lint.jobs.KWICBodyParts
     time: 00:20:00
-    nodes: 1
+    nodes: 2
     cores: 16
     mem: 64000
