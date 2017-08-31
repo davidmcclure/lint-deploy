@@ -33,7 +33,9 @@ lint_config:
 
     corpus:
       novelParquet: '{{ lint_dirs.data }}/novels.parquet'
+      unigramBinCountJSON: '{{ lint_dirs.data }}/unigram-bin-counts.json'
       ngramBinCountJSON: '{{ lint_dirs.data }}/ngram-bin-counts.json'
+      kwicBodyPartsJSON: '{{ lint_dirs.data }}/kwic-body-parts.json'
 
 
 lint_sbatch:
@@ -81,6 +83,12 @@ lint_sbatch:
     mem: 64000
 
   - class: lint.jobs.ExtTokenOffsets
+    time: 00:20:00
+    nodes: 1
+    cores: 16
+    mem: 64000
+
+  - class: lint.jobs.KWICBodyParts
     time: 00:20:00
     nodes: 1
     cores: 16
